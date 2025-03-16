@@ -27,7 +27,7 @@ await Parser.Default.ParseArguments<Options.Run>(args).WithParsedAsync(async (pa
         switch (parameters)
         {
             case Options.Run options:
-                await main.RunAsync(cancellationTokenSource.Token);
+                await main.RunAsync(options.PstFilePath, cancellationTokenSource.Token);
                 break;
         };
     }
