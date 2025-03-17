@@ -36,7 +36,7 @@ internal class Main(ILogger<Main> logger)
             {
                 if (artifact.Info is XstFolder folder)
                 {
-                    logger.LogInformation("{Id} {Parent}\t{Name}", artifact.Id, artifact.ParentId, folder.DisplayName);
+                    logger.LogInformation("{Name}", folder.DisplayName);
                 }
 
                 if (artifact.Info is XstMessage message)
@@ -46,7 +46,7 @@ internal class Main(ILogger<Main> logger)
                     //    attachment.SaveToStream(new MemoryStream());
                     //}
 
-                    logger.LogInformation("{Id} {Parent}\t{Subject}", artifact.Id, artifact.ParentId, message.Subject);
+                    logger.LogInformation("{Date}\t{Subject}", message.Date, message.Subject);
                 }
             }
         }
